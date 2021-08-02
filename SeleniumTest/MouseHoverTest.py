@@ -20,6 +20,6 @@ actionObj.move_to_element(menu).perform()
 childMenu = driver.find_element_by_link_text('Top')
 
 # Invoking the Child element so that it goes to the hovered link
-actionObj.move_to_element(childMenu).perform()
+actionObj.move_to_element(childMenu).click().perform()
 
 driver.quit()
