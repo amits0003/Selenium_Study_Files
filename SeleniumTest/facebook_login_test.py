@@ -1,11 +1,11 @@
-#Facebook Login Page Test demo for file 1
+# Facebook Login Page Test demo for file
 from selenium import webdriver
-
 
 driver = webdriver.Chrome(executable_path="C:\\Users\\amit_pc\\Documents\\Study materials\\python\\Seleium\\chromedriver.exe")
 
 driver.get('https://en-gb.facebook.com/reg/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjI3Mjk5OTY5LCJjYWxsc2l0ZV9pZCI6MzYzOTY5MDQ0ODc4OTI4fQ%3D%3D')
-#driver.get('www.facebook.abcd')
+
+# driver.get('www.facebook.abcd')
 
 driver.find_element_by_name('firstname').send_keys('Amit')
 driver.find_element_by_name('lastname').send_keys('Kumar')
@@ -24,9 +24,8 @@ driver.find_element_by_xpath("//button[@type='submit']").click()
 
 dob_text = driver.find_element_by_class_name('_2_68').text
 
-
 assert 'Date' in dob_text
 
 print(driver.title)
 
-driver.quit()
+#driver.quit()

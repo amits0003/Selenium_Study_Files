@@ -5,88 +5,94 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-# Creating a new empty List
-list_veg = []
-list_veg_at_page2 = []
 
-driver = webdriver.Chrome(
-    executable_path="C:\\Users\\amit_pc\\Documents\\Study materials\\python\\Seleium\\chromedriver.exe")
+def test_func_under_test():
+    # Creating a new empty List
+    list_veg = []
+    list_veg_at_page2 = []
 
-driver.get('https://rahulshettyacademy.com/seleniumPractise/')
+    driver = webdriver.Chrome(
+        executable_path="C:\\Users\\amit_pc\\Documents\\Study materials\\python\\Seleium\\chromedriver.exe")
 
-# Search items
-driver.find_element_by_css_selector('input.search-keyword').send_keys('ber')
-time.sleep(4)
+    driver.get('https://rahulshettyacademy.com/seleniumPractise/')
 
-# count number of items returned in the search
-count_item = len(driver.find_elements_by_xpath("//div[@class='product']"))
+    # Search items
+    driver.find_element_by_css_selector('input.search-keyword').send_keys('ber')
+    time.sleep(4)
 
-# count number of buttons returned
-#button_list = driver.find_elements_by_xpath("//div[@class='product-action']/button")
+    # count number of items returned in the search
+    count_item = len(driver.find_elements_by_xpath("//div[@class='product']"))
 
-button_list = driver.find_elements_by_xpath("//div[@class='product-action']/button")
+    # count number of buttons returned
+    # button_list = driver.find_elements_by_xpath("//div[@class='product-action']/button")
 
-# selecting every button from the button list
-for button in button_list:
-    list_veg.append(button.find_element_by_xpath("parent::div/parent::div/h4").text)
-    button.click()
+    button_list = driver.find_elements_by_xpath("//div[@class='product-action']/button")
 
-print('list of items added to the cart == ', list_veg)
+    # selecting every button from the button list
+    for button in button_list:
+        list_veg.append(button.find_element_by_xpath("parent::div/parent::div/h4").text)
+        button.click()
 
-# clicking the cart image icon
-driver.find_element_by_css_selector("img[alt='Cart']").click()
+    print('list of items added to the cart == ', list_veg)
 
-# Clicking the proceed to checkout button
-driver.find_element_by_xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]").click()
+    # clicking the cart image icon
+    driver.find_element_by_css_selector("img[alt='Cart']").click()
 
-# explicit wait
-# it explicitly wait till the object find the #promocode class name appears on the page
-wait = WebDriverWait(driver, 10)
-wait.until(expected_conditions.presence_of_element_located((By.CLASS_NAME,"promoCode")))
+    # Clicking the proceed to checkout button
+    driver.find_element_by_xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]").click()
 
-list_items = driver.find_elements_by_class_name('product-name')
+    # explicit wait
+    # it explicitly wait till the object find the #promocode class name appears on the page
+    wait = WebDriverWait(driver, 10)
+    wait.until(expected_conditions.presence_of_element_located((By.CLASS_NAME, "promoCode")))
 
-for item in list_items:
-    list_veg_at_page2.append(item.text)
+    list_items = driver.find_elements_by_class_name('product-name')
 
-print('list of items displayed at checkout page == ', list_veg_at_page2)
+    for item in list_items:
+        list_veg_at_page2.append(item.text)
 
-# validate
-assert list_veg == list_veg_at_page2
+    print('list of items displayed at checkout page == ', list_veg_at_page2)
 
-# adding promo code
-driver.find_element_by_class_name('promoCode').send_keys('rahulshettyacademy')
+    # validate
+    assert list_veg == list_veg_at_page2
 
-original_amount = driver.find_element_by_xpath("//span[@class='totAmt']").text
+    # adding promo code
+    driver.find_element_by_class_name('promoCode').send_keys('rahulshettyacademy')
 
-# clicking in the button to apply promo code
-driver.find_element_by_css_selector(".promoBtn").click()
+    original_amount = driver.find_element_by_xpath("//span[@class='totAmt']").text
 
-# Explicit wait until the promo applied object appears
-wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, 'span.promoInfo')))
+    # clicking in the button to apply promo code
+    driver.find_element_by_css_selector(".promoBtn").click()
 
-promo_Text = driver.find_element_by_css_selector("span.promoInfo").text
+    # Explicit wait until the promo applied object appears
+    wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, 'span.promoInfo')))
 
-amount_after_discount = driver.find_element_by_xpath("//span[@class='discountAmt']").text
+    promo_Text = driver.find_element_by_css_selector("span.promoInfo").text
 
-# comparing that the amount after discount is less than the original amount
-print('original Amount = ', float(original_amount))
-print('Amount after discount = ', float(amount_after_discount))
+    amount_after_discount = driver.find_element_by_xpath("//span[@class='discountAmt']").text
 
-assert float(original_amount) > float(amount_after_discount)
+    # comparing that the amount after discount is less than the original amount
+    print('original Amount = ', float(original_amount))
+    print('Amount after discount = ', float(amount_after_discount))
 
-print(promo_Text)
+    assert float(original_amount) > float(amount_after_discount)
 
-assert promo_Text == "Code applied ..!"
+    print(promo_Text)
 
-list_amount_product = driver.find_elements_by_xpath("//tr/td[5]/p")
-sum = 0
-for amount in list_amount_product:
-    sum = sum+float(amount.text)
+    assert promo_Text == "Code applied ..!"
+
+    list_amount_product = driver.find_elements_by_xpath("//tr/td[5]/p")
+    sum = 0
+    for amount in list_amount_product:
+        sum = sum + float(amount.text)
+
+    assert float(sum) == float(original_amount)
+
+    print('Total Amount by adding the individual prices of items', sum)
+
+    driver.quit()
 
 
-assert float(sum) == float(original_amount)
 
-print('Total Amount by adding the individual prices of items', sum)
-
-driver.quit()
+if __name__ == "__main__":
+    test_func_under_test()
