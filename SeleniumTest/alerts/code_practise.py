@@ -30,13 +30,13 @@ n = 6
 #         print(value)
 #         break
 
-n = int(input())
-rem = 0
-while(n>0):
-    rem = n%10
-    n = n//10
-
-print(rem)
+# n = int(input())
+# rem = 0
+# while(n>0):
+#     rem = n%10
+#     n = n//10
+#
+# print(rem)
 
 
 # number_of_tc = input("Number of TestCases")
@@ -51,3 +51,7 @@ print(rem)
 # angle_per_minute = 3
 #
 # if
+
+english_subscribers = input().split(" ")
+
+print(type(english_subscribers))
