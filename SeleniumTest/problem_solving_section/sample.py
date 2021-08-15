@@ -62,17 +62,31 @@
 # #
 # #
 
-volcanic = [7000,13400,7000,14000]
-nonVolcanic = [7000,13400,15000,7000]
-newList = []
+# volcanic = [7000,13400,7000,14000]
+# nonVolcanic = [7000,13400,15000,7000]
+# newList = []
+#
+# for i in volcanic:
+#     for j in nonVolcanic:
+#         if i == j:
+#             if i not in newList:
+#                 newList.append(i)
+#
+#
+# newList.sort(reverse=True)
+#
+# print(newList)
 
-for i in volcanic:
-    for j in nonVolcanic:
-        if i == j:
-            if i not in newList:
-                newList.append(i)
 
+# Python program to illustrate **kargs for
+# variable number of keyword arguments with
+# one extra argument.
 
-newList.sort(reverse=True)
+def myFun(arg1, **kwargs):
+    print(arg1)
+    for key, value in kwargs.items():
+        print ("%s == %s" %(key, value))
 
-print(newList)
+# Driver code
+myFun("Hi", first ='Geeks', mid ='for', last='Geeks')
+ 
