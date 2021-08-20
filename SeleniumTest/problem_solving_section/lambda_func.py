@@ -24,3 +24,4 @@ print(list(result))
 # result contains even numbers of the list
 result = filter(lambda x: x % 2 == 0, seq)
 print(list(result))
+

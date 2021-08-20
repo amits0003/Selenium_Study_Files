@@ -9,6 +9,7 @@ driver = webdriver.Chrome(executable_path="C:\\Users\\amit_pc\\Documents\\Study 
 driver.get('https://rahulshettyacademy.com/AutomationPractice/')
 
 driver.maximize_window()
+
 #//input[@type='']
 
 radio_button_list = driver.find_elements_by_xpath("//input[@type='radio']")
@@ -21,3 +22,5 @@ assert radio_button_list[1].is_selected()
 
 
 driver.quit()
+
+driver.find_elements_by_tag_name("a").__getattribute__('href')
