@@ -21,7 +21,7 @@ when to use :
 2. explicit wait
 '''
 driver.find_element_by_css_selector('input.search-keyword').send_keys('ber')
-time.sleep(4)
+#time.sleep(4)
 
 count_item = len(driver.find_elements_by_xpath("//div[@class='product']"))
 
