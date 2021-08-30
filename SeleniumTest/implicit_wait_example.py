@@ -21,7 +21,7 @@ when to use :
 2. explicit wait
 '''
 driver.find_element_by_css_selector('input.search-keyword').send_keys('ber')
-time.sleep(4)
+#time.sleep(4)
 
 count_item = len(driver.find_elements_by_xpath("//div[@class='product']"))
 
@@ -34,7 +34,7 @@ driver.find_element_by_css_selector("img[alt='Cart']").click()
 
 driver.find_element_by_xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]").click()
 
-#adding promo code
+# adding promo code
 driver.find_element_by_class_name('promoCode').send_keys('rahulshettyacademy')
 driver.find_element_by_css_selector(".promoBtn").click()
 promo_Text = driver.find_element_by_css_selector("span.promoInfo").text
