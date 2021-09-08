@@ -7,9 +7,10 @@ Input                 output
 3 6 5 1 8
 
 Sol  :
-Make an array to store the cummulative with modulo 3
+Make an array to store the cumulative with modulo 3
+
 cumArr[0] = largest sum which is divisible by 3
-cumArr[1] = largest sum when divided by 3 leaves rem  =1
+cumArr[1] = largest sum when divided by 3 leaves rem  = 1
 cumArr[2] = largest sum when divided by 3 leaves remo = 2
 
 """
@@ -22,7 +23,6 @@ def maxSumDivThree(Arr):
             cumm_Arr[(i + ar) % 3] = max(cumm_Arr[(i + ar) % 3], i + ar)
 
     return cumm_Arr[0]
-
 
 if __name__ == "__main__":
     in_arr = list(map(int, input("Enter the numbers").split()))
