@@ -19,8 +19,12 @@ def sub(x, y): return x - y
 
 
 func_add_log = log_func(add)
-logging.info(func_add_log)
+#logging.info(func_add_log)
+
 func_sub_log = log_func(sub)
+logging.debug(func_sub_log)
 
 func_add_log(2,5)
 func_sub_log(4,2)
+
+
