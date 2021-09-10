@@ -24,4 +24,22 @@ def arrange_arr(arr):
 
     return arr
 
-print('m')
+arr1 = [1, 2, 3, 4, 5, 6]
+
+print(arrange_arr(arr1))
+
+N = 1523455
+li = []
+for ele in str(N) :
+    li.append(ele)
+
+for ele in li :
+    if ele == "5":
+        li.remove("5")
+        break
+str1 = ""
+for ele in li :
+    str1 = str1+ele
+
+print(int(str1))
+
