@@ -22,7 +22,7 @@ def solution(S):
     dict_pos = {}
 
     for idx in range(len(S)):
-        if (ord(S[idx]) >= 65 and ord(S[idx]) <= 90):
+        if 65 <= ord(S[idx]) <= 90:
             upper_a[ord(S[idx]) - 65] += 1
         else:
             lower_a[ord(S[idx]) - 97] += 1
@@ -40,11 +40,11 @@ def solution(S):
 
     smallest_bal_str = sys.maxsize
 
-    while (idc < len(S)):
-        if (S[idc] in dict_pos):
+    while idc < len(S):
+        if S[idc] in dict_pos:
 
-            while (stx < idc):
-                if (ord(S[stx]) >= 65 and ord(S[stx]) <= 90):
+            while stx < idc:
+                if 65 <= ord(S[stx]) <= 90:
                     upper_a[ord(S[stx]) - 65] -= 1
                 else:
                     lower_a[ord(S[stx]) - 97] -= 1
@@ -53,44 +53,43 @@ def solution(S):
             idc += 1
             stx += 1
         else:
-            if (ord(S[idc]) >= 65 and ord(S[idc]) <= 90):
+            if 65 <= ord(S[idc]) <= 90:
                 upper_a[ord(S[idc]) - 65] += 1
             else:
                 lower_a[ord(S[idc]) - 97] += 1
 
-            while (1):
-                if (ord(S[stx]) >= 65 and ord(S[stx]) <= 90 and upper_a[ord(S[stx]) - 65] > 1):
+            while 1:
+                if 65 <= ord(S[stx]) <= 90 and upper_a[ord(S[stx]) - 65] > 1:
                     upper_a[ord(S[stx]) - 65] -= 1
                     stx += 1
-                elif (ord(S[stx]) >= 97 and ord(S[stx]) <= 122 and lower_a[ord(S[stx]) - 97] > 1):
+                elif 97 <= ord(S[stx]) <= 122 and lower_a[ord(S[stx]) - 97] > 1:
                     lower_a[ord(S[stx]) - 97] -= 1
                     stx += 1
                 else:
                     break
 
-            if (checkCurrentString(lower_a, upper_a)):
-                if (smallest_bal_str > (idc - stx + 1)):
+            if checkCurrentString(lower_a, upper_a):
+                if smallest_bal_str > (idc - stx + 1):
                     smallest_bal_str = idc - stx + 1
                     start_pt = stx
                     end_pt = idc
 
             idc += 1
 
-    if (start_pt == -1 or end_pt == -1):
+    if start_pt == -1 or end_pt == -1:
         return -1
-
-
     else:
         answer = ""
         for index in range(start_pt, end_pt + 1, 1):
             answer += S[index]
 
-        return len(answer)
+        res = f"{'shortest even string ' + answer +'and its length is ', len(answer)}"
+
+        return res
 
 
 if __name__ == "__main__":
-    S = "AcZCbaBZ"
-
+    S = input("Enter Any String")
     print(solution(S))
 
 
