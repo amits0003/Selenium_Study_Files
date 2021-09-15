@@ -2,6 +2,7 @@
 
 arr = [-4, 3, -9, 0, 4 , 1]
 
+s_arr = sorted(arr)
 length_array = len(arr)
 positive_digits_arr = []
 negative_digit_arr = []
