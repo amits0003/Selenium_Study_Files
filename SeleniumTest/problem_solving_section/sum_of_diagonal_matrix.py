@@ -25,5 +25,5 @@ res = abs(temp)-abs(temp2)
 print(temp)
 print(temp2)
 
-print(res)
+print(abs(res))
 

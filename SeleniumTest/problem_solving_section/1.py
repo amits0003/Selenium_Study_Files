@@ -1,5 +1,4 @@
 
-import se
 stringa = 'i have No items'
 
 # some number item
@@ -40,3 +39,6 @@ print(number)
 
 # print(res)
 
+arr1 = [1,2,3,45]
+
+print(arr1[:])
