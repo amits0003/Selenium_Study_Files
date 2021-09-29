@@ -1,3 +1,9 @@
+"""
+find the missing digits : input = s = '7985interdisciplinary12'
+output = 0346bfghjkmoquvwxz
+
+"""
+
 def isDigit(ch):
     ch = ord(ch)
     if ord('0') <= ch <= ord('9'):

@@ -1,33 +1,33 @@
-#
-# class Sample:
-#     def __init__(self):
-#         pass
-#
-#     def display(self, lista):
-#         dict_a  = {}
-#         lista = list((int(val) for val in lista))
-#         count = 0
-#         temp = []
-#         for index, element in enumerate(lista):
-#             if element not in dict_a.keys():
-#                 #dict_a[element] = element
-#                 if element not in temp:
-#                     temp.append(element)
-#                 dict_a[element] = len(temp)
-#
-#
-#
-#         print(dict_a)
-#
-#
-#         #print(lista)
-#
-# obj1 = Sample()
-#
-# input_list = input("Enter the numbers").split(" ")
-#
-# obj1.display(input_list)
-#
+
+class Sample:
+    def __init__(self):
+        pass
+
+    def display(self, lista):
+        dict_a  = {}
+        lista = list((int(val) for val in lista))
+        count = 0
+        temp = []
+        for index, element in enumerate(lista):
+            if element not in dict_a.keys():
+                #dict_a[element] = element
+                if element not in temp:
+                    temp.append(element)
+                dict_a[element] = len(temp)
+
+
+
+        print(dict_a)
+
+
+        #print(lista)
+
+obj1 = Sample()
+
+input_list = input("Enter the numbers").split(" ")
+
+obj1.display(input_list)
+
 
 
 a = int(input("enter the number you want"))
