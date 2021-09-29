@@ -1,6 +1,8 @@
 # --------------------approach 1----------------------------------------
 '''
-arr1 = [1, 2, 3, 5, 6]
+input array : arr1 = [1, 2, 3, 4,5, 6,7,8,9]
+output pattern : [9,1,8,2,7,3,6,4,5]
+'''
 
 arr = [1,2,3,4,5]
 
@@ -84,3 +86,4 @@ print(list_of_sum_of_four_elements)
 
 print(max(list_of_sum_of_four_elements), min(list_of_sum_of_four_elements))
 
+'''
