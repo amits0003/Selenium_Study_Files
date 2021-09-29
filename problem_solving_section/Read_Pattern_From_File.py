@@ -7,7 +7,7 @@ c. all the ip address
 
 import re
 
-with open('file1.txt', 'r' ) as fptr:
+with open('file1.txt', 'r') as fptr:
     contents = fptr.readlines()
 
 for ele in contents:
