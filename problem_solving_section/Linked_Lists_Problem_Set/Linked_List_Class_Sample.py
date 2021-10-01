@@ -1,5 +1,4 @@
 # Node Object
-import selenium_firefox
 
 
 class Node:
