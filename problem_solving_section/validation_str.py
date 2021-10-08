@@ -36,7 +36,8 @@ list_se = []
 for ele in s :
     if ele not in list_se:
         list_se.append(ele)
-        if ele
+        if ele:
+            pass
 
 
 
