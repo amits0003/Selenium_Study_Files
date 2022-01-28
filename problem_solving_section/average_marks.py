@@ -20,4 +20,4 @@ if __name__ == '__main__':
 
             average_marks = total_marks / len(marks)
 
-    print("Average Marks for ",query_name, 'is : %0.2f'.format(average_marks))
+    print("Average Marks for ",query_name, 'is '.format(average_marks))
