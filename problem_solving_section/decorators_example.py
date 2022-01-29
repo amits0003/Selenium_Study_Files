@@ -1,30 +1,30 @@
-'''
+"""
 First Class Functions
-'''
+"""
 
 
 def ret_capital(text):
     return text.upper()
 
 
-print(ret_capital('sentence in captial letter'))
+print(ret_capital('This Sentence will get printed in capital letters'))
 
-cap_leter = ret_capital
+cap_letter = ret_capital
 
-print(cap_leter('hello'))
+print(cap_letter('hello'))
 
 
 def ret_lower(text):
     return text.lower()
 
 
-def disp_func(func):
-    dip_message = func('created from function passes as an argument')
-    print(dip_message)
+def display_func(func):
+    display_message = func('This line created from function passes as an argument')
+    print(display_message)
 
 
-disp_func(ret_capital)
-disp_func(ret_lower)
+display_func(ret_capital)
+display_func(ret_lower)
 
 
 def create_adder(x):
@@ -63,13 +63,13 @@ disp_value()
 print('------------------------------------')
 
 
-def disp_value1():
+def display_inside_value():
     print('Hi this is inside value')
 
 
-disp_value1 = print_value(disp_value1)
+display_inside_value = print_value(display_inside_value)
 
-disp_value1()
+display_inside_value()
 
 print('----------------2nd part--------------------')
 
@@ -77,7 +77,7 @@ import time
 import math
 
 
-def decorator1(func):
+def decorator_function(func):
     def new_function(*args, **kwargs):
         begin = time.time()
 
