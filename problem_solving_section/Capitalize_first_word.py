@@ -8,7 +8,7 @@ first_name, last_name = [], []
 mod_f_name, mod_l_name = [], []
 for index, ele in enumerate(list_name):
     for idx, char in enumerate(ele):
-        if idx == 0 and char :
+        if idx == 0 and char:
             Capital_name.append((ele[0].upper()+ele[1:]))
 
 res = ''

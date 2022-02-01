@@ -4,6 +4,7 @@ output = 0346bfghjkmoquvwxz
 
 """
 
+
 def isDigit(ch):
     ch = ord(ch)
     if ord('0') <= ch <= ord('9'):
@@ -16,26 +17,24 @@ def missingCharacters(string_given):
 
     # Write your code here
     list_from_string = []
-    stringone_nine = '0123456789'
+    one_to_nine = '0123456789'
     list_one_nine = []
     extract_digit_list = []
     extract_aplhabets_list = []
 
     string_abc = "abcdefghijklmnopqrstuvwxyz"
-    list_abc= []
+    list_abc = []
 
     final_temp_list_digit = []
     final_temp_list_alpha = []
 
-    for digit in stringone_nine:
+    for digit in one_to_nine:
         list_one_nine.append(digit)
     for char in string_abc:
         list_abc.append(char)
 
-
-    for element in string_given :
+    for element in string_given:
         list_from_string.append(element)
-
 
     for index, value in enumerate(list_from_string):
         if isDigit(value):
@@ -51,18 +50,16 @@ def missingCharacters(string_given):
         if i1 not in extract_aplhabets_list:
             final_temp_list_alpha.append(i1)
 
-
-    temp_list = final_temp_list_digit+final_temp_list_alpha
+    temp_list = final_temp_list_digit + final_temp_list_alpha
 
     stringA = ""
     for ele in temp_list:
-        stringA = stringA+ str(ele)
+        stringA = stringA + str(ele)
 
     print(stringA)
 
-
-    #print(extract_digit_list)
-    #print(extract_aplhabets_list)
+    # print(extract_digit_list)
+    # print(extract_aplhabets_list)
 
 
 if __name__ == "__main__":
