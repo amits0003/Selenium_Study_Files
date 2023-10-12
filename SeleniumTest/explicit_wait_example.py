@@ -11,7 +11,7 @@ driver = webdriver.Chrome(executable_path="C:\\Users\\amit_pc\\Documents\\Study 
 driver.get('https://rahulshettyacademy.com/seleniumPractise/')
 
 '''
-Diferent type of wait mechanish
+Diferent type of wait mechanics / methodologies
 
 2. explicit wait 
 explicitly targeting only for any specific object
